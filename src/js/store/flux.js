@@ -1,6 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			people: [],
+			vehicles: [],
+			planets: [],
+
 			demo: [
 				{
 					// title: "FIRST",
@@ -15,25 +19,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
-			PeopleFetch: () => { //fetch principal para traer datos de People
-				fetch("https://www.swapi.tech/api/people/1")
-					.then(res => res.json())
-					.then(data => console.log(data))
-					.catch(err => console.error(err))
+			PeopleFetch: async (id) => { //FETCH PRINCIPAL DE PEOPLE
+				try {
+					const res = await fetch('https://www.swapi.tech/api/people/${id}');
+					const data = await res.json();
+					setStore({ people: data.results });
+				} catch (error) {
+					console.error("Error fetching people:", error);
+				}
 			},
-			VehiclesFetch: () => { //fetch principal para traer datos de Vehicles
-				fetch("https://www.swapi.tech/api/vehicles/4")
-					.then(res => res.json())
-					.then(data => console.log(data))
-					.catch(err => console.error(err))
+			VehiclesFetch: async () => { //FETCH PRINCIPAL DE VEHICLES
+				try {
+					const res = await fetch("https://www.swapi.tech/api/vehicles");
+					if (res.ok) {
+						const data = await res.json();
+						setStore({ vehicles: data.results });
+					}
+				} catch (error) {
+					console.error("Error fetching vehicles:", error);
+				}
 			},
-			PlanetsFetch: () => { //fetch principal para traer datos de Planets
-				fetch("https://www.swapi.tech/api/planets/1")
-					.then(res => res.json())
-					.then(data => console.log(data))
-					.catch(err => console.error(err))
+			PlanetsFetch: async () => { //FETCH PRINCIPAL DE PLANETS
+				try {
+					const res = await fetch("https://www.swapi.tech/api/planets");
+					if (res.ok) {
+						const data = await res.json();
+						setStore({ planets: data.results });
+					}
+				} catch (error) {
+					console.error("Error fetching planets:", error);
+				}
 			}
-
 
 			// Use getActions to call a function within a fuction
 			// exampleFunction: () => {

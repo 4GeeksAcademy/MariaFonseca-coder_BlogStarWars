@@ -5,7 +5,7 @@ export const Planets =()=>{
     const {store, actions}=useContext(Context)
     // console.log(store.demo); PARA VER QUE HAY EN STORE
     useEffect (()=>{
-        actions.VehiclesFetch()
+        actions.PlanetsFetch()
     },[])
     return 
 }

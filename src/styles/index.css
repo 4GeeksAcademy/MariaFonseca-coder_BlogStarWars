@@ -1,3 +1,23 @@
-/* 
-    General Styles
-*/
+.people-container {
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding: 1rem;
+    gap: 1rem;
+    scrollbar-width: none; /* Para Firefox */
+    -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+}
+
+.people-container::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari y Opera */
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 10rem; /* Ajusta el tamaño de la tarjeta aquí */
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+}

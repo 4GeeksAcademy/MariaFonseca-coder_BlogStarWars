@@ -7,7 +7,7 @@ export const People = () => {
     useEffect(() => {
         actions.PeopleFetch();
         console.log(store.people);
-    }, [actions]);
+    }, []);
 
     return (
         <div>
@@ -29,6 +29,7 @@ export const People = () => {
                                     <strong>Hair Color:</strong> {person.hair_color} <br />
                                     <strong>Eye Color:</strong> {person.eye_color}
                                 </p>
+                                
                                 <button type="button" class="btn btn-dark">Dark</button>
                             </div>
                         </div>

@@ -4,9 +4,8 @@ import { Context } from "../store/appContext";
 
 export const DetallesComponentes = () => {
     const { store, actions } = useContext(Context);
-    const { id } = useParams(); // Obtén el id de la URL
+    const { id } = useParams();
 
-    // Cargar los detalles del personaje al montar el componente
     useEffect(() => {
         actions.PeopleDetailsFetch(id);
     }, [id]);
@@ -14,32 +13,39 @@ export const DetallesComponentes = () => {
     const personDetails = store.peopleDetails;
 
     return (
-        <div className="container text-white mt-5">
+        <div className="container d-flex justify-content-center mt-5">
             {personDetails ? (
-                <>
-                    <h2 className="mb-4">{personDetails.properties.name}</h2>
-                    <div className="row">
-                        <div className="col-md-6">
+                <div className="card mb-3" style={{ width: "1000px" }}>
+                    <div className="row g-0">
+                        <div className="col-md-4">
                             <img
                                 src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
-                                className="img-fluid"
+                                className="img-fluid rounded-start"
                                 alt={personDetails.properties.name}
                                 onError={(e) => (e.target.src = 'https://via.placeholder.com/400x500?text=No+Image')}
                             />
                         </div>
-                        <div className="col-md-6">
-                            <p><strong>Height:</strong> {personDetails.properties.height} cm</p>
-                            <p><strong>Mass:</strong> {personDetails.properties.mass} kg</p>
-                            <p><strong>Hair Color:</strong> {personDetails.properties.hair_color}</p>
-                            <p><strong>Skin Color:</strong> {personDetails.properties.skin_color}</p>
-                            <p><strong>Eye Color:</strong> {personDetails.properties.eye_color}</p>
-                            <p><strong>Birth Year:</strong> {personDetails.properties.birth_year}</p>
-                            <p><strong>Gender:</strong> {personDetails.properties.gender}</p>
+                        <div className="col-md-8 text-center" style={{ backgroundColor: "#0A0A0A", color: "white" }}>
+                            <div className="card-body">
+                                <h5 className="card-title">{personDetails.properties.name}</h5>
+                                <p className="card-text">
+                                    <strong>Height:</strong> {personDetails.properties.height} cm <br /><br />
+                                    <strong>Mass:</strong> {personDetails.properties.mass} kg <br /><br />
+                                    <strong>Hair Color:</strong> {personDetails.properties.hair_color} <br /><br />
+                                    <strong>Skin Color:</strong> {personDetails.properties.skin_color} <br /><br />
+                                    <strong>Eye Color:</strong> {personDetails.properties.eye_color} <br /><br />
+                                    <strong>Birth Year:</strong> {personDetails.properties.birth_year} <br /><br />
+                                    <strong>Gender:</strong> {personDetails.properties.gender}
+                                </p>
+                                <p className="card-text">
+                                    <small className="text-muted">Información obtenida de Star Wars API</small>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </>
+                </div>
             ) : (
-                <p>Cargando detalles...</p>
+                <p className="text-white">Cargando detalles...</p>
             )}
         </div>
     );

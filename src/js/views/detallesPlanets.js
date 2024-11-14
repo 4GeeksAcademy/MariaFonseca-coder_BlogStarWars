@@ -15,9 +15,11 @@ export const DetallesPlanets = () => {
     return (
         <div className="container d-flex justify-content-center mt-5">
             {planetsDetails ? (
-                <div className="card mb-3" style={{ width: "1000px" }}>
+                <div className="card mb-3" style={{
+                    maxWidth: "1200px", width: "100%", backgroundColor: "#000000", borderColor: "black", borderStyle: "solid"
+                }}>
                     <div className="row g-0">
-                        <div className="col-md-4" style={{ backgroundColor: "#0A0A0A", paddingTop: "39px" }}>
+                        <div className="col-md-4" style={{ paddingTop: "30px" }}>
                             <img
                                 src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
                                 className="img-fluid rounded-start"
@@ -25,9 +27,9 @@ export const DetallesPlanets = () => {
                                 onError={(e) => (e.target.src = 'https://via.placeholder.com/400x500?text=No+Image')}
                             />
                         </div>
-                        <div className="col-md-8 text-center" style={{ backgroundColor: "#0A0A0A", color: "white" }}>
+                        <div className="col-md-8 text-center" style={{ color: "white" }}>
                             <div className="card-body">
-                                <h5 className="card-title">{planetsDetails.properties.name}</h5>
+                                <h3 className="card-title">{planetsDetails.properties.name}</h3> <br />
                                 <p className="card-text">
                                     <strong>Rotation Period:</strong> {planetsDetails.properties.rotation_period} hours <br /><br />
                                     <strong>Orbital Period:</strong> {planetsDetails.properties.orbital_period} days <br /><br />

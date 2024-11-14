@@ -30,7 +30,7 @@ export const People = () => {
                                     <strong>Hair Color:</strong> {person.hair_color} <br />
                                     <strong>Eye Color:</strong> {person.eye_color}
                                 </p>
-                                <Link to={`/detalles/${index + 1}`}>
+                                <Link to={`/detallesPerson/${index + 1}`}>
                                     <button type="button" className="btn btn-dark">Ver detalles</button>
                                 </Link>
                             </div>

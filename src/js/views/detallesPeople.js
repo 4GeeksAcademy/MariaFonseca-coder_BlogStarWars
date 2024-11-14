@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const DetallesComponentes = () => {
+export const DetallesPeople = () => {
     const { store, actions } = useContext(Context);
     const { id } = useParams();
 

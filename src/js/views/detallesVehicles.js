@@ -24,7 +24,11 @@ export const DetallesVehicles = () => {
                                 src={`https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`}
                                 className="img-fluid rounded-start"
                                 alt={vehicleDetails.properties.name}
-                                onError={(e) => (e.target.src = 'https://via.placeholder.com/1000x800?text=No+Image')}
+                                onError={(e) => {
+                                    e.target.onerror = null; // Previene un loop infinito si la imagen alternativa falla
+                                    e.target.src = 'https://via.placeholder.com/1000x1000?text=No+Image+Available';
+                                }}
+                                // onError={(e) => (e.target.src = 'https://via.placeholder.com/1000x800?text=No+Image')} //ESTA ES LA QUE TENÍA
                                 style={{
                                     width: "80%",
                                     height: "auto",

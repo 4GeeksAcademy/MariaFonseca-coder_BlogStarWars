@@ -12,7 +12,7 @@ export const People = () => {
     return (
         <div>
             <h1 className="text-white">CHARACTERS</h1>
-            <div className="people-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
+            <div className="card-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
                 {store.people && store.people.length > 0 ? (
                     store.people.map((person, index) => (
                         <div key={index} className="card mx-2" style={{ display: "inline-block", width: "210px", height: "400px" }}>

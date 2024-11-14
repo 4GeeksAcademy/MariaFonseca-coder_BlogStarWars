@@ -1,4 +1,4 @@
-.people-container {
+.card-container {
     display: flex;
     overflow-x: scroll;
     white-space: nowrap;
@@ -8,7 +8,7 @@
     -ms-overflow-style: none; /* Para Internet Explorer y Edge */
 }
 
-.people-container::-webkit-scrollbar {
+.card-container::-webkit-scrollbar {
     display: none; /* Para Chrome, Safari y Opera */
 }
 

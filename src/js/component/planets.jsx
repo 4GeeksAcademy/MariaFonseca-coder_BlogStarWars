@@ -11,7 +11,7 @@ export const Planets = () => {
     return (
         <div>
             <h1 className="text-white">PLANETS</h1>
-            <div className="planets-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
+            <div className="card-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
                 {store.planets && store.planets.length > 0 ? (
                     store.planets.map((planet, index) => (
                         <div key={index} className="card mx-2" style={{ display: "inline-block", width: "210px", height: "400px" }}>

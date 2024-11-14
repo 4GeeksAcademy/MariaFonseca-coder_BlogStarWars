@@ -11,7 +11,7 @@ export const Vehicles = () => {
     return (
         <div>
             <h1 className="text-white">VEHICLES</h1>
-            <div className="vehicles-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
+            <div className="card-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
                 {store.vehicles && store.vehicles.length > 0 ? (
                     store.vehicles.map((vehicle, index) => (
                         <div key={index} className="card mx-2" style={{ display: "inline-block", width: "210px", height: "400px" }}>

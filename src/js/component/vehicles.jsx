@@ -14,7 +14,7 @@ export const Vehicles = () => {
             <div className="card-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
                 {store.vehicles && store.vehicles.length > 0 ? (
                     store.vehicles.map((vehicle, index) => (
-                        <div key={index} className="card mx-2" style={{ display: "inline-block", width: "210px", height: "400px" }}>
+                        <div key={index} className="card mx-2" style={{ display: "inline-block", width: "360px", height: "500px" }}>
                             <img
                                 src={`https://starwars-visualguide.com/assets/img/vehicles/${index + 1}.jpg`}
                                 className="card-img-top"

@@ -18,6 +18,9 @@
 }
 
 .card-img-top {
-    height: 210px;
+    height: 310px;
     object-fit: cover;
+}
+#btnGroupDrop1{
+    margin-right: 25px;
 }

@@ -14,7 +14,7 @@ export const Planets = () => {
             <div className="card-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
                 {store.planets && store.planets.length > 0 ? (
                     store.planets.map((planet, index) => (
-                        <div key={index} className="card mx-2" style={{ display: "inline-block", width: "210px", height: "400px" }}>
+                        <div key={index} className="card mx-2" style={{ display: "inline-block", width: "360px", height: "500px" }}>
                             <img
                                 src={`https://starwars-visualguide.com/assets/img/planets/${index + 1}.jpg`}
                                 className="card-img-top"

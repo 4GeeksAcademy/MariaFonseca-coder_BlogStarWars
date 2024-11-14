@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const People = () => {
     const { store, actions } = useContext(Context);
@@ -29,8 +30,9 @@ export const People = () => {
                                     <strong>Hair Color:</strong> {person.hair_color} <br />
                                     <strong>Eye Color:</strong> {person.eye_color}
                                 </p>
-
-                                <button type="button" class="btn btn-dark">Dark</button>
+                                <Link to={`/detalles/${index + 1}`}>
+                                    <button type="button" className="btn btn-dark">Ver detalles</button>
+                                </Link>
                             </div>
                         </div>
                     ))

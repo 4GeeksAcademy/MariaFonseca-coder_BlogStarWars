@@ -56,8 +56,19 @@ export const DetallesPeople = () => {
                                     </table>
                                 </p>
 
-                                <p className="card-text" style={{ paddingTop: "150px " }}>
-                                    <small className="text-muted">DESIGNED AND DEVELOPED BY MARIA JOSE FONSECA</small>
+                                <p className="card-text text-center" style={{ paddingTop: "150px " }}>
+                                    <small className="text-muted" style={{ marginLeft: "200px " }}>DESIGNED AND DEVELOPED BY MARIA JOSE FONSECA</small>
+                                    <button
+                                        type="button"
+                                        className="btn btn-dark" style={{ marginLeft: "180px", color: "#f0e68c" }}
+                                        onClick={() => actions.Favorite({
+                                            name: personDetails.properties.name,
+                                            id: id,
+                                            type: "person"
+                                        })}
+                                    >
+                                        <i className="fas fa-heart"></i>
+                                    </button>
                                 </p>
                             </div>
                         </div>

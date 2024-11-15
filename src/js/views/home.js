@@ -6,8 +6,10 @@ import { Vehicles } from "../component/vehicles.jsx";
 
 export const Home = () => (
 	<div className="text-center mt-5">
-		<People /> {/* //CARD DE PEOPLE */}
+		<People />
 		<Planets />
 		<Vehicles />
+		<p className="text-muted" style={{ paddingTop: "50px ", color: "white" }}>DESIGNED AND DEVELOPED BY MARIA JOSE FONSECA
+		</p>
 	</div>
 );

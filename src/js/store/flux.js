@@ -1,28 +1,16 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			people: [], // ESPACIO DE PeopleFetch
-			peopleDetails: null, // ESPACIO DETALLES DE PeopleDetailsFetch
-			vehicles: [], // ESPACIO DE VehiclesFetch
-			vehicleDetails: null, // ESPACIO DETALLES DE VehiclesDetailsFetch
-			planets: [], // ESPACIO DE PlanetsFetch
-			planetDetails: null, // ESPACIO DETALLES DE PlanetsDetailsFetch
+			people: [], //ESPACIO DE PeopleFetch
+			peopleDetails: null, //ESPACIO DETALLES DE PeopleDetailsFetch
+			vehicles: [], //ESPACIO DE VehiclesFetch
+			vehicleDetails: null, //ESPACIO DETALLES DE VehiclesDetailsFetch
+			planets: [], //ESPACIO DE PlanetsFetch
+			planetDetails: null, //ESPACIO DETALLES DE PlanetsDetailsFetch
 			favorites: [],
-			demo: [
-				{
-					// title: "FIRST",
-					// background: "white",
-					// initial: "white"
-				},
-				{
-					// title: "SECOND",
-					// background: "white",
-					// initial: "white"
-				}
-			]
 		},
 		actions: {
-			// Fetch para obtener la lista de personas
+			//Fetch para obtener la lista de personas
 			PeopleFetch: async () => {
 				try {
 					const res = await fetch("https://swapi.dev/api/people");
@@ -34,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			// Fetch para obtener detalles de una persona
+			//Fetch para obtener detalles de una persona
 			PeopleDetailsFetch: async (id) => {
 				try {
 					const res = await fetch(`https://www.swapi.tech/api/people/${id}`);
@@ -45,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			// Fetch para obtener la lista de vehículos
+			//Fetch para obtener la lista de vehículos
 			VehiclesFetch: async () => {
 				try {
 					const res = await fetch("https://swapi.dev/api/vehicles");
@@ -56,7 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			// Fetch para obtener detalles de un vehículo
+			//Fetch para obtener detalles de un vehículo
 			VehiclesDetailsFetch: async (id) => {
 				try {
 					const res = await fetch(`https://www.swapi.tech/api/vehicles/${id}`);
@@ -67,7 +55,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			// Fetch para obtener la lista de planetas
+			//Fetch para obtener la lista de planetas
 			PlanetsFetch: async () => {
 				try {
 					const res = await fetch("https://swapi.dev/api/planets");
@@ -80,7 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			// Fetch para obtener detalles de un planeta
+			//Fetch para obtener detalles de un planeta
 			PlanetsDetailsFetch: async (id) => {
 				try {
 					const res = await fetch(`https://www.swapi.tech/api/planets/${id}`);
@@ -91,18 +79,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			// Función para manejar favoritos
+			//Función para manejar favoritos
 			Favorite: (item) => {
 				const store = getStore();
 				const isFavorite = store.favorites.some(fav => fav.name === item.name);
 
 				if (isFavorite) {
-					// Elimina el favorito si ya está en la lista
 					setStore({
 						favorites: store.favorites.filter(fav => fav.name !== item.name)
 					});
 				} else {
-					// Añade a la lista de favoritos
 					setStore({
 						favorites: [...store.favorites, item]
 					});

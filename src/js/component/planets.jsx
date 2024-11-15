@@ -22,8 +22,7 @@ export const Planets = () => {
                                 className="card-img-top"
                                 alt={planet.name}
                                 onError={(e) => {
-                                    // Si la imagen no se encuentra en la API, utiliza la imagen importada
-                                    e.target.onerror = null; // Prevenir bucle infinito
+                                    e.target.onerror = null;
                                     e.target.src = mustafarImage;
                                 }}
                             />

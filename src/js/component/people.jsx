@@ -35,7 +35,7 @@ export const People = () => {
                                 </Link>
                                 <button
                                     type="button"
-                                    className="btn ms-5"
+                                    className="btn btn-dark" style={{ marginLeft: "3px", color: "white" }}
                                     onClick={() => actions.Favorite(person)}
                                 >
                                     <i className="fas fa-heart"></i>

@@ -24,27 +24,17 @@ export const DetallesVehicles = () => {
                                 src={`https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`}
                                 className="img-fluid rounded-start"
                                 alt={vehicleDetails.properties.name}
-                                onError={(e) => {
-                                    e.target.onerror = null; // Previene un loop infinito si la imagen alternativa falla
-                                    e.target.src = 'https://via.placeholder.com/1000x1000?text=No+Image+Available';
-                                }}
-                                // onError={(e) => (e.target.src = 'https://via.placeholder.com/1000x800?text=No+Image')} //ESTA ES LA QUE TENÍA
+                                onError={(e) => (e.target.src = 'https://via.placeholder.com/1000x800?text=No+Image')}
                                 style={{
                                     width: "80%",
                                     height: "auto",
                                     maxWidth: "1000px",
                                     maxHeight: "1000px",
-                                    objectFit: "cover"
+                                    objectFit: "cover",
                                 }}
                             />
                         </div>
                         <div className="col-md-6 text-center d-flex align-items-center" style={{ color: "white" }}>
-
-
-
-
-
-
                             <div className="card-body">
                                 <h3 className="card-title">{vehicleDetails.properties.name}</h3> <br />
                                 <p className="card-text">
@@ -72,7 +62,7 @@ export const DetallesVehicles = () => {
                                         </tbody>
                                     </table>
                                 </p>
-                                <p className="card-text" style={{ paddingTop: "150px " }}>
+                                <p className="card-text" style={{ paddingTop: "90px " }}>
                                     <small className="text-muted">DESIGNED AND DEVELOPED BY MARIA JOSE FONSECA</small>
                                 </p>
                             </div>

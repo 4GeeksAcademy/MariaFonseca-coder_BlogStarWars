@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import mustafarImage from "../../img/Mustafar-TROSGG.webp";
 
 export const DetallesPlanets = () => {
     const { store, actions } = useContext(Context);
@@ -19,12 +20,16 @@ export const DetallesPlanets = () => {
                     maxWidth: "1200px", width: "100%", backgroundColor: "#000000", borderColor: "black", borderStyle: "solid"
                 }}>
                     <div className="row g-0">
-                        <div className="col-md-4" style={{ paddingTop: "30px" }}>
+                        <div className="col-md-4" style={{ paddingTop: "10px" }}>
                             <img
                                 src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
-                                className="img-fluid rounded-start"
+                                className="img-fluid rounded-start" style={{ marginTop: "50px" }}
                                 alt={planetsDetails.properties.name}
-                                onError={(e) => (e.target.src = 'https://via.placeholder.com/400x500?text=No+Image')}
+                                onError={(e) => {
+                                    // Si la imagen no se encuentra en la API, utiliza la imagen importada
+                                    e.target.onerror = null; // Prevenir bucle infinito
+                                    e.target.src = mustafarImage;
+                                }}
                             />
                         </div>
                         <div className="col-md-8 text-center" style={{ color: "white" }}>

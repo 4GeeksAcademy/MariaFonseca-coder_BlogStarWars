@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import mustafarImage from "../../img/Mustafar-TROSGG.webp";
 
 export const Planets = () => {
     const { store, actions } = useContext(Context);
@@ -11,7 +12,7 @@ export const Planets = () => {
 
     return (
         <div>
-            <h1 className="text-white">PLANETS</h1>
+            <h3 className="text-white" style={{ textAlign: "left", marginLeft: "28px" }}>Planets</h3>
             <div className="card-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
                 {store.planets && store.planets.length > 0 ? (
                     store.planets.map((planet, index) => (
@@ -20,7 +21,11 @@ export const Planets = () => {
                                 src={`https://starwars-visualguide.com/assets/img/planets/${index + 1}.jpg`}
                                 className="card-img-top"
                                 alt={planet.name}
-                                onError={(e) => (e.target.src = 'https://via.placeholder.com/200x300?text=No+Image')}
+                                onError={(e) => {
+                                    // Si la imagen no se encuentra en la API, utiliza la imagen importada
+                                    e.target.onerror = null; // Prevenir bucle infinito
+                                    e.target.src = mustafarImage;
+                                }}
                             />
                             <div className="card-body">
                                 <h5 className="card-title">{planet.name}</h5>

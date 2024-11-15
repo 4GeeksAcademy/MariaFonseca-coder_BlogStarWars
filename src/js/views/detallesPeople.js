@@ -28,9 +28,6 @@ export const DetallesPeople = () => {
                             />
                         </div>
                         <div className="col-md-8 text-center" style={{ color: "white" }}>
-
-
-
                             <div className="card-body">
                                 <h3 className="card-title">{personDetails.properties.name}</h3> <br />
                                 <p className="card-text">
@@ -63,10 +60,6 @@ export const DetallesPeople = () => {
                                     <small className="text-muted">DESIGNED AND DEVELOPED BY MARIA JOSE FONSECA</small>
                                 </p>
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>

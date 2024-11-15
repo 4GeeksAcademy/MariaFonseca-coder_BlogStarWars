@@ -28,21 +28,45 @@ export const DetallesPeople = () => {
                             />
                         </div>
                         <div className="col-md-8 text-center" style={{ color: "white" }}>
+
+
+
                             <div className="card-body">
                                 <h3 className="card-title">{personDetails.properties.name}</h3> <br />
                                 <p className="card-text">
-                                    <strong>Height:</strong> {personDetails.properties.height} cm <br /><br />
-                                    <strong>Mass:</strong> {personDetails.properties.mass} kg <br /><br />
-                                    <strong>Hair Color:</strong> {personDetails.properties.hair_color} <br /><br />
-                                    <strong>Skin Color:</strong> {personDetails.properties.skin_color} <br /><br />
-                                    <strong>Eye Color:</strong> {personDetails.properties.eye_color} <br /><br />
-                                    <strong>Birth Year:</strong> {personDetails.properties.birth_year} <br /><br />
-                                    <strong>Gender:</strong> {personDetails.properties.gender}
+                                    <h6>
+                                        <small>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        </small>
+                                    </h6>
+                                    <br /><br />
+                                    <table className="table text-white">
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Height:</strong> {personDetails.properties.height} cm</td>
+                                                <td><strong>Mass:</strong> {personDetails.properties.mass} kg</td>
+                                                <td><strong>Hair Color:</strong> {personDetails.properties.hair_color}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Skin Color:</strong> {personDetails.properties.skin_color}</td>
+                                                <td><strong>Eye Color:</strong> {personDetails.properties.eye_color}</td>
+                                                <td><strong>Birth Year:</strong> {personDetails.properties.birth_year}</td>
+                                            </tr>
+                                            <tr>
+                                                <td colSpan="3"><strong>Gender:</strong> {personDetails.properties.gender}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </p>
-                                <p className="card-text">
-                                    <small className="text-muted">Información obtenida de Star Wars API</small>
+
+                                <p className="card-text" style={{ paddingTop: "150px " }}>
+                                    <small className="text-muted">DESIGNED AND DEVELOPED BY MARIA JOSE FONSECA</small>
                                 </p>
                             </div>
+
+
+
+
                         </div>
                     </div>
                 </div>

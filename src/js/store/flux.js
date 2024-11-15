@@ -8,7 +8,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [], // ESPACIO DE PlanetsFetch
 			planetDetails: null, // ESPACIO DETALLES DE PlanetsDetailsFetch
 			favorites: [],
-
 			demo: [
 				{
 					// title: "FIRST",

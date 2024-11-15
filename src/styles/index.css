@@ -56,7 +56,7 @@ body {
     color: white;
     border: none;
   }
-  
+
   /* Asegura que el fondo no se aplique al contenedor general */
   #app {
     min-height: 100vh;

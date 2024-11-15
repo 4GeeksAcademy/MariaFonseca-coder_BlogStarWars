@@ -24,3 +24,50 @@
 #btnGroupDrop1{
     margin-right: 25px;
 }
+
+
+/* ESTRELLAS */
+
+/* Aplica el fondo del GIF a todo el cuerpo del documento */
+body {
+    background: url('https://i.pinimg.com/originals/da/5c/80/da5c80450b91ab4da958fabbdcf707a4.gif') repeat;
+    background-size: 100px 100px; /* Aumenta el tamaño de las estrellas */
+    background-position: 0 0;
+    background-attachment: fixed; /* Mantiene el fondo fijo mientras se hace scroll */
+    animation: moveBackground 120s linear infinite; /* Se hace más lento aumentando el tiempo */
+    overflow-x: hidden; /* Para evitar que el contenido se desborde */
+  }
+  
+  /* Aplica el fondo con capa oscura para el Navbar */
+  .navbar {
+    background: url('https://i.pinimg.com/originals/da/5c/80/da5c80450b91ab4da958fabbdcf707a4.gif') repeat;
+    background-size: 100px 100px;
+    background-position: 0 0;
+    background-attachment: fixed; /* Mantiene el fondo fijo en el navbar */
+    animation: moveBackground 120s linear infinite;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad del 50% */
+    position: relative;
+    z-index: 10; /* Asegura que el navbar esté por encima del contenido */
+  }
+  
+  /* Asegura que el fondo no se repita ni se aplique a las tarjetas */
+  .card {
+    background-color: rgba(0, 0, 0, 0.879); /* Fondo oscuro para las tarjetas */
+    color: white;
+    border: none;
+  }
+  
+  /* Asegura que el fondo no se aplique al contenedor general */
+  #app {
+    min-height: 100vh;
+  }
+  
+  /* Animación para mover el fondo lentamente */
+  @keyframes moveBackground {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }  

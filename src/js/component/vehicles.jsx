@@ -34,7 +34,7 @@ export const Vehicles = () => {
                                 </Link>
                                 <button
                                     type="button"
-                                    className="btn btn-dark" style={{ marginLeft: "3px", color: "white" }}
+                                    className="btn btn-dark" style={{ marginLeft: "3px", color: "#f0e68c" }}
                                     onClick={() => actions.Favorite(vehicle)}
                                 >
                                     <i className="fas fa-heart"></i>

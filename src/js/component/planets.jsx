@@ -25,7 +25,7 @@ export const Planets = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{planet.name}</h5>
                                 <p className="card-text">
-                                    <strong>Climate:</strong> {planet.climate || "Unknown"} <br /> {/* LE AGREGUÉ ESTA */}
+                                    <strong>Climate:</strong> {planet.climate || "Unknown"} <br />
                                     <strong>Terrain:</strong> {planet.terrain || "Unknown"} <br />
                                     <strong>Population:</strong> {planet.population || "Unknown"}
                                 </p>
@@ -34,7 +34,7 @@ export const Planets = () => {
                                 </Link>
                                 <button
                                     type="button"
-                                    className="btn btn-dark" style={{ marginLeft: "3px", color: "white" }}
+                                    className="btn btn-dark" style={{ marginLeft: "3px", color: "#f0e68c" }}
                                     onClick={() => actions.Favorite(planet)}
                                 >
                                     <i className="fas fa-heart"></i>

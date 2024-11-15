@@ -20,7 +20,7 @@ export const Navbar = () => {
 				<div className="ml-auto">
 					<div className="dropdown">
 						<button
-							className="btn btn-light dropdown-toggle"
+							className="btn bg-warning dropdown-toggle"
 							type="button"
 							id="dropdownMenuButton"
 							data-bs-toggle="dropdown"
@@ -28,7 +28,7 @@ export const Navbar = () => {
 						>
 							Favorites
 						</button>
-						<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+						<ul className="dropdown-menu dropdown-menu-end" style={{ backgroundColor: "#343a40" }} aria-labelledby="dropdownMenuButton">
 							{store.favorites.length > 0 ? (
 								store.favorites.map((fav, index) => (
 									<li key={index} className="dropdown-item d-flex justify-content-between align-items-center">

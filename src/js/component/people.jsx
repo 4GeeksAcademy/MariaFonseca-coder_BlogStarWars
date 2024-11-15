@@ -26,7 +26,7 @@ export const People = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{person.name}</h5>
                                 <p className="card-text">
-                                    <strong>Gender:</strong> {person.gender} <br /> {/* ESTOS 3 AÚN NO ME SALEN */}
+                                    <strong>Gender:</strong> {person.gender} <br />
                                     <strong>Hair Color:</strong> {person.hair_color} <br />
                                     <strong>Eye Color:</strong> {person.eye_color}
                                 </p>
@@ -35,7 +35,7 @@ export const People = () => {
                                 </Link>
                                 <button
                                     type="button"
-                                    className="btn btn-dark" style={{ marginLeft: "3px", color: "white" }}
+                                    className="btn btn-dark" style={{ marginLeft: "3px", color: "#f0e68c" }}
                                     onClick={() => actions.Favorite(person)}
                                 >
                                     <i className="fas fa-heart"></i>

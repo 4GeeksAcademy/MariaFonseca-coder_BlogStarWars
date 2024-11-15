@@ -39,19 +39,41 @@ export const DetallesVehicles = () => {
                             />
                         </div>
                         <div className="col-md-6 text-center d-flex align-items-center" style={{ color: "white" }}>
+
+
+
+
+
+
                             <div className="card-body">
                                 <h3 className="card-title">{vehicleDetails.properties.name}</h3> <br />
                                 <p className="card-text">
-                                    <strong>Model:</strong> {vehicleDetails.properties.model} <br /><br />
-                                    <strong>Manufacturer:</strong> {vehicleDetails.properties.manufacturer} <br /><br />
-                                    <strong>Cost in Credits:</strong> {vehicleDetails.properties.cost_in_credits} <br /><br />
-                                    <strong>Length:</strong> {vehicleDetails.properties.length} meters <br /><br />
-                                    <strong>Max Speed:</strong> {vehicleDetails.properties.max_atmosphering_speed} km/h <br /><br />
-                                    <strong>Crew:</strong> {vehicleDetails.properties.crew} <br /><br />
-                                    <strong>Passengers:</strong> {vehicleDetails.properties.passengers} <br /><br />
+                                    <h6>
+                                        <small>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        </small>
+                                    </h6>
+                                    <br /><br />
+                                    <table className="table text-white">
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Model:</strong> {vehicleDetails.properties.model}</td>
+                                                <td><strong>Manufacturer:</strong> {vehicleDetails.properties.manufacturer}</td>
+                                                <td><strong>Cost in Credits:</strong> {vehicleDetails.properties.cost_in_credits} </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Length:</strong> {vehicleDetails.properties.length} meters</td>
+                                                <td><strong>Max Speed:</strong> {vehicleDetails.properties.max_atmosphering_speed} km/h </td>
+                                                <td><strong>Crew:</strong> {vehicleDetails.properties.crew} </td>
+                                            </tr>
+                                            <tr>
+                                                <td colSpan="3"><strong>Passengers:</strong> {vehicleDetails.properties.passengers}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </p>
-                                <p className="card-text">
-                                    <small className="text-muted">Información obtenida de Star Wars API</small>
+                                <p className="card-text" style={{ paddingTop: "150px " }}>
+                                    <small className="text-muted">DESIGNED AND DEVELOPED BY MARIA JOSE FONSECA</small>
                                 </p>
                             </div>
                         </div>

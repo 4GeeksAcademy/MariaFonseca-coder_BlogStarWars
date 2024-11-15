@@ -32,6 +32,13 @@ export const Vehicles = () => {
                                 <Link to={`/detallesVehicles/${index + 1}`}>
                                     <button type="button" className="btn btn-dark">Ver detalles</button>
                                 </Link>
+                                <button
+                                    type="button"
+                                    className="btn ms-5"
+                                    onClick={() => actions.Favorite(vehicle)}
+                                >
+                                    <i className="fas fa-heart"></i>
+                                </button>
                             </div>
                         </div>
                     ))

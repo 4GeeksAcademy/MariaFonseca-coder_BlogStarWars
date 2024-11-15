@@ -33,6 +33,13 @@ export const People = () => {
                                 <Link to={`/detallesPerson/${index + 1}`}>
                                     <button type="button" className="btn btn-dark">Ver detalles</button>
                                 </Link>
+                                <button
+                                    type="button"
+                                    className="btn ms-5"
+                                    onClick={() => actions.Favorite(person)}
+                                >
+                                    <i className="fas fa-heart"></i>
+                                </button>
                             </div>
                         </div>
                     ))
@@ -40,6 +47,6 @@ export const People = () => {
                     <p className="text-center text-white">Cargando personajes...</p>
                 )}
             </div>
-        </div>
+        </div >
     );
 };

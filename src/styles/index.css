@@ -3,14 +3,17 @@
   overflow-x: auto;
   white-space: nowrap;
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   gap: 1rem;
   scrollbar-width: thin;
-  scrollbar-color: #3b3b3b #737373;
+  scrollbar-color: #1f1f1f #343434;
 }
 
 .card {
   flex: 0 0 auto;
-  width: 10rem;
+  white-space: normal;
+  overflow: visible;
 }
 
 .card-img-top {

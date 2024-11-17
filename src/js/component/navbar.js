@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../../img/logo.jpg';
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
+	const [isOpen, setIsOpen] = useState(false);  // Estado para controlar si el dropdown está abierto
+
+	// Función para alternar la visibilidad del dropdown
+	const toggleDropdown = () => {
+		setIsOpen(!isOpen);
+	};
 
 	return (
 		<nav className="navbar navbar-expand-lg mb-3" style={{ backgroundColor: '#000000' }}>
@@ -18,25 +24,28 @@ export const Navbar = () => {
 						className="navbar-brand mb-0 h1"
 					/>
 				</Link>
+
 				<div className="ms-auto">
 					<div className="dropdown">
 						<button
-							className="btn bg-warning dropdown-toggle"
+							className="btn bg-warning dropdown-toggle" style={{ marginTop: "20px", marginRight: "30px" }}
 							type="button"
 							id="dropdownMenuButton"
-							data-bs-toggle="dropdown"
-							aria-expanded="false"
+							onClick={toggleDropdown}  // Solo cambiar el estado para abrir/cerrar el dropdown
 						>
 							Favorites
 						</button>
-						<ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+						<ul
+							className={`dropdown-menu dropdown-menu-end bg-dark text-white ${isOpen ? "show" : ""}`}  // Mostrar solo si `isOpen` es true
+							aria-labelledby="dropdownMenuButton"
+						>
 							{store.favorites.length > 0 ? (
 								store.favorites.map((fav, index) => (
-									<li key={index} className="dropdown-item d-flex justify-content-between align-items-center">
+									<li key={index} className="dropdown-item d-flex justify-content-between align-items-center text-white" style={{ whiteSpace: "normal", overflow: "visible", borderBottom: "1px solid #555" }}>
 										<span>{fav.name}</span>
 										<button
 											className="btn btn-sm btn-danger ms-2"
-											onClick={() => actions.Favorite(fav)}
+											onClick={() => actions.Favorite(fav)}  // Eliminar favorito
 										>
 											<i className="fas fa-trash"></i>
 										</button>
@@ -48,7 +57,7 @@ export const Navbar = () => {
 						</ul>
 					</div>
 				</div>
-			</div>
-		</nav>
+			</div >
+		</nav >
 	);
 };

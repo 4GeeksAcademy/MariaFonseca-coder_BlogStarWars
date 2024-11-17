@@ -43,7 +43,9 @@ export const Vehicles = () => {
                         </div>
                     ))
                 ) : (
-                    <p className="text-center text-white">Cargando vehículos...</p>
+                    <><p class="spinner-border spinner-border-sm text-light" style={{ marginTop: "5px" }} role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </p><p className="text-center text-white">Cargando vehículos...</p></>
                 )}
             </div>
         </div>

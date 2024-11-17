@@ -44,7 +44,9 @@ export const People = () => {
                         </div>
                     ))
                 ) : (
-                    <p className="text-center text-white">Cargando personajes...</p>
+                    <><p class="spinner-border spinner-border-sm text-light" style={{ marginTop: "5px" }} role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </p><p className="text-center text-white">Cargando personajes...</p></>
                 )}
             </div>
         </div >

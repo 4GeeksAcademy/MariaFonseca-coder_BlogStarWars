@@ -16,7 +16,7 @@ export const People = () => {
             <div className="card-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
                 {store.people && store.people.length > 0 ? (
                     store.people.map((person, index) => (
-                        <div key={index} className="card mx-2" style={{ display: "inline-block", width: "300px", height: "500px" }}>
+                        <div key={index} className="card mx-2" style={{ display: "inline-block", width: "290px", height: "500px" }}>
                             <img
                                 src={`https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`}
                                 className="card-img-top"

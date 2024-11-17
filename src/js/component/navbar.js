@@ -9,15 +9,16 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg mb-3" style={{ backgroundColor: '#000000' }}>
 			<div className="container">
-				<Link to="/">
+				{/* Logo centrado */}
+				<Link to="/" className="position-absolute top-50 start-50 translate-middle">
 					<img
 						src={logo}
 						alt="Logo"
-						style={{ width: '130px', height: '70px' }}
+						style={{ width: '200px', height: '200px', marginTop: "60px" }}
 						className="navbar-brand mb-0 h1"
 					/>
 				</Link>
-				<div className="ml-auto">
+				<div className="ms-auto">
 					<div className="dropdown">
 						<button
 							className="btn bg-warning dropdown-toggle"

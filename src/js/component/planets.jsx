@@ -16,7 +16,7 @@ export const Planets = () => {
             <div className="card-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
                 {store.planets && store.planets.length > 0 ? (
                     store.planets.map((planet, index) => (
-                        <div key={index} className="card mx-2" style={{ display: "inline-block", width: "300px", height: "530px" }}>
+                        <div key={index} className="card mx-2" style={{ display: "inline-block", width: "290px", height: "535px" }}>
                             <img
                                 src={`https://starwars-visualguide.com/assets/img/planets/${index + 1}.jpg`}
                                 className="card-img-top"
@@ -33,16 +33,18 @@ export const Planets = () => {
                                     <strong>Terrain:</strong> {planet.terrain || "Unknown"} <br />
                                     <strong>Population:</strong> {planet.population || "Unknown"}
                                 </p>
-                                <Link to={`/detallesPlanets/${index + 1}`}>
-                                    <button type="button" className="btn btn-dark">Ver detalles</button>
-                                </Link>
-                                <button
-                                    type="button"
-                                    className="btn btn-dark" style={{ marginLeft: "3px", color: "#f0e68c" }}
-                                    onClick={() => actions.Favorite(planet)}
-                                >
-                                    <i className="fas fa-heart"></i>
-                                </button>
+                                <div style={{ position: "absolute", display: "flex", justifyContent: "center", bottom: "1px", left: "50%", transform: "translateX(-50%)", width: "100%" }}>
+                                    <Link to={`/detallesPlanets/${index + 1}`}>
+                                        <button type="button" className="btn btn-dark" style={{ marginBottom: "10px" }}>Ver detalles</button>
+                                    </Link>
+                                    <button
+                                        type="button"
+                                        className="btn btn-dark" style={{ marginLeft: "3px", color: "#f0e68c", marginBottom: "10px" }}
+                                        onClick={() => actions.Favorite(planet)}
+                                    >
+                                        <i className="fas fa-heart"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     ))

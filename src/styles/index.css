@@ -1,68 +1,66 @@
 .card-container {
-    display: flex;
-    overflow-x: scroll;
-    white-space: nowrap;
-    padding: 1rem;
-    gap: 1rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.card-container::-webkit-scrollbar {
-    display: none;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  gap: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #3b3b3b #737373;
 }
 
 .card {
-    flex: 0 0 auto;
-    width: 10rem;
+  flex: 0 0 auto;
+  width: 10rem;
 }
 
 .card-img-top {
-    height: 310px;
-    object-fit: cover;
+  height: 310px;
+  object-fit: cover;
 }
-#btnGroupDrop1{
-    margin-right: 25px;
+
+#btnGroupDrop1 {
+  margin-right: 25px;
 }
 
 
 /*******************************************************************************ESTRELLAS******************************************************************************************/
 
 body {
-    background: url('https://i.pinimg.com/originals/da/5c/80/da5c80450b91ab4da958fabbdcf707a4.gif') repeat;
-    background-size: 100px 100px;
+  background: url('https://i.pinimg.com/originals/da/5c/80/da5c80450b91ab4da958fabbdcf707a4.gif') repeat;
+  background-size: 100px 100px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  animation: moveBackground 130s linear infinite;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background: url('https://i.pinimg.com/originals/da/5c/80/da5c80450b91ab4da958fabbdcf707a4.gif') repeat;
+  background-size: 100px 100px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  animation: moveBackground 120s linear infinite;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.879);
+  color: white;
+  border: none;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+@keyframes moveBackground {
+  0% {
     background-position: 0 0;
-    background-attachment: fixed;
-    animation: moveBackground 130s linear infinite;
-    overflow-x: hidden;
-  }
-  
-  .navbar {
-    background: url('https://i.pinimg.com/originals/da/5c/80/da5c80450b91ab4da958fabbdcf707a4.gif') repeat;
-    background-size: 100px 100px;
-    background-position: 0 0;
-    background-attachment: fixed;
-    animation: moveBackground 120s linear infinite;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 10;
-  }
-  
-  .card {
-    background-color: rgba(0, 0, 0, 0.879);
-    color: white;
-    border: none;
   }
 
-  #app {
-    min-height: 100vh;
+  100% {
+    background-position: 100% 100%;
   }
-  
-  @keyframes moveBackground {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
-  }  
+}

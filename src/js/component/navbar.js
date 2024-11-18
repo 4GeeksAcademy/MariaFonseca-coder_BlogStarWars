@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../../img/logo.jpg';
-import gifStarWars from '../../img/gifStarWars.gif';
+import nave from '../../img/nave.gif';
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
@@ -14,12 +14,18 @@ export const Navbar = () => {
 	};
 
 	return (
-		<nav className="navbar navbar-expand-lg mb-3" style={{ backgroundColor: '#000000' }}>
+		<nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#000000', marginTop: "70px", marginBottom: "100px" }}>
 			<div className="container">
 				<img
-					src={gifStarWars}
-					alt="gif"
-					style={{ width: '120px', height: '130px', marginTop: "10px" }}
+					src={nave}
+					alt="gif 2"
+					style={{
+						width: '350px',
+						height: '250px',
+						position: "absolute",
+						left: 0,
+						marginLeft: 0
+					}}
 					className="navbar-brand mb-0 h1"
 				/>
 

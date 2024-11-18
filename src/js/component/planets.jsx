@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import mustafarImage from "../../img/Mustafar-TROSGG.webp";
+import Tatooine from "../../img/Tatooine.webp";
 
 export const Planets = () => {
     const { store, actions } = useContext(Context);
@@ -23,7 +23,7 @@ export const Planets = () => {
                                 alt={planet.name}
                                 onError={(e) => {
                                     e.target.onerror = null;
-                                    e.target.src = mustafarImage;
+                                    e.target.src = Tatooine;
                                 }}
                             />
                             <div className="card-body">
@@ -35,7 +35,7 @@ export const Planets = () => {
                                 </p>
                                 <div style={{ position: "absolute", display: "flex", justifyContent: "center", bottom: "1px", left: "50%", transform: "translateX(-50%)", width: "100%" }}>
                                     <Link to={`/detallesPlanets/${index + 1}`}>
-                                        <button type="button" className="btn btn-dark" style={{ marginBottom: "10px" }}>Ver detalles</button>
+                                        <button type="button" className="btn btn-dark" style={{ marginBottom: "10px" }}>See details</button>
                                     </Link>
                                     <button
                                         type="button"
@@ -49,9 +49,11 @@ export const Planets = () => {
                         </div>
                     ))
                 ) : (
-                    <><p class="spinner-border spinner-border-sm text-light" style={{ marginTop: "5px" }} role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </p><p className="text-center text-white">Cargando planetas...</p></>
+                    <><p className="text-center text-white">Loading planets </p>
+                        <p class="spinner-border spinner-border-sm text-light" style={{ marginTop: "5px" }} role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </p>
+                    </>
                 )}
             </div>
         </div>

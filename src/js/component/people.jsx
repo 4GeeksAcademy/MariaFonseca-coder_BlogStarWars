@@ -31,7 +31,7 @@ export const People = () => {
                                     <strong>Eye Color:</strong> {person.eye_color}
                                 </p>
                                 <Link to={`/detallesPerson/${index + 1}`}>
-                                    <button type="button" className="btn btn-dark">Ver detalles</button>
+                                    <button type="button" className="btn btn-dark">See details</button>
                                 </Link>
                                 <button
                                     type="button"
@@ -44,9 +44,11 @@ export const People = () => {
                         </div>
                     ))
                 ) : (
-                    <><p class="spinner-border spinner-border-sm text-light" style={{ marginTop: "5px" }} role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </p><p className="text-center text-white">Cargando personajes...</p></>
+                    <><p className="text-center text-white">Loading characters </p>
+                        <p class="spinner-border spinner-border-sm text-light" style={{ marginTop: "5px" }} role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </p>
+                    </>
                 )}
             </div>
         </div >

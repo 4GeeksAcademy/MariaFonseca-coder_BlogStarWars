@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import mustafarImage from "../../img/Mustafar-TROSGG.webp";
+import Tatooine from "../../img/Tatooine.webp";
 
 export const DetallesPlanets = () => {
     const { store, actions } = useContext(Context);
@@ -31,7 +31,7 @@ export const DetallesPlanets = () => {
                                 alt={planetsDetails.properties.name}
                                 onError={(e) => {
                                     e.target.onerror = null;
-                                    e.target.src = mustafarImage;
+                                    e.target.src = Tatooine;
                                 }}
                             />
                         </div>

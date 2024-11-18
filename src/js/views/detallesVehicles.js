@@ -1,6 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import vehiculo1 from "../../img/Sandcrawler.webp";
+import vehiculo2 from "../../img/T-16_Skyhopper.webp";
+import vehiculo3 from "../../img/X-34 landspeeder.webp";
+import vehiculo4 from "../../img/Snowspeeder.webp";
+import vehiculo5 from "../../img/Storm IV Twin-Pod cloud car.png";
+import vehiculo6 from "../../img/Sail_Barge.webp";
 
 export const DetallesVehicles = () => {
     const { store, actions } = useContext(Context);
@@ -10,15 +16,17 @@ export const DetallesVehicles = () => {
         actions.VehiclesDetailsFetch(id);
     }, [id]);
 
+    // Asegúrate de que `vehicleDetails` esté bien definido antes de acceder a sus propiedades
     const vehicleDetails = store.vehicleDetails;
+    const properties = vehicleDetails?.properties;
 
     return (
         <div className="container d-flex justify-content-center mt-5">
-            {vehicleDetails ? (
+            {properties ? (
                 <div className="card mb-3" style={{
                     maxWidth: "1200px",
                     width: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.8)", // Fondo semi-transparente
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
                     borderColor: "black",
                     borderStyle: "solid"
                 }}>
@@ -26,55 +34,60 @@ export const DetallesVehicles = () => {
                         <div className="col-md-6 d-flex align-items-center justify-content-center">
                             <img
                                 src={`https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`}
-                                className="img-fluid rounded-start"
+                                className="img-fluid"
                                 alt={vehicleDetails.properties.name}
-                                onError={(e) => (e.target.src = 'https://via.placeholder.com/1000x800?text=No+Image')}
-                                style={{
-                                    width: "80%",
-                                    height: "auto",
-                                    maxWidth: "1000px",
-                                    maxHeight: "1000px",
-                                    objectFit: "cover",
+                                onError={(e) => {
+                                    e.target.onerror = null;
+                                    const vehicleName = vehicleDetails.properties.name.toLowerCase();
+                                    e.target.src =
+                                        vehicleName === "sand crawler" ? vehiculo1 :
+                                            vehicleName === "t-16 skyhopper" ? vehiculo2 :
+                                                vehicleName === "x-34 landspeeder" ? vehiculo3 :
+                                                    vehicleName === "snowspeeder" ? vehiculo4 :
+                                                        vehicleName === "storm iv twin-pod cloud car" ? vehiculo5 :
+                                                            vehicleName === "sail barge" ? vehiculo6 : "";
                                 }}
                             />
                         </div>
                         <div className="col-md-6 text-center d-flex align-items-center" style={{ color: "white" }}>
                             <div className="card-body">
-                                <h3 className="card-title">{vehicleDetails.properties.name}</h3> <br />
+                                <h3 className="card-title">{properties.name}</h3>
+                                <br />
                                 <p className="card-text">
                                     <h6>
                                         <small>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                         </small>
                                     </h6>
                                     <br /><br />
                                     <table className="table text-white">
                                         <tbody>
                                             <tr>
-                                                <td><strong>Model:</strong> {vehicleDetails.properties.model}</td>
-                                                <td><strong>Manufacturer:</strong> {vehicleDetails.properties.manufacturer}</td>
-                                                <td><strong>Cost in Credits:</strong> {vehicleDetails.properties.cost_in_credits} </td>
+                                                <td><strong>Model:</strong> {properties.model}</td>
+                                                <td><strong>Manufacturer:</strong> {properties.manufacturer}</td>
+                                                <td><strong>Cost in Credits:</strong> {properties.cost_in_credits}</td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Length:</strong> {vehicleDetails.properties.length} meters</td>
-                                                <td><strong>Max Speed:</strong> {vehicleDetails.properties.max_atmosphering_speed} km/h </td>
-                                                <td><strong>Crew:</strong> {vehicleDetails.properties.crew} </td>
+                                                <td><strong>Length:</strong> {properties.length} meters</td>
+                                                <td><strong>Max Speed:</strong> {properties.max_atmosphering_speed} km/h</td>
+                                                <td><strong>Crew:</strong> {properties.crew}</td>
                                             </tr>
                                             <tr>
-                                                <td colSpan="3"><strong>Passengers:</strong> {vehicleDetails.properties.passengers}</td>
+                                                <td colSpan="3"><strong>Passengers:</strong> {properties.passengers}</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </p>
                                 <p className="card-text text-center" style={{ paddingTop: "150px " }}>
-                                    <small className="text-muted" style={{ marginLeft: "104px" }} > DESIGNED AND DEVELOPED BY MARIA JOSE FONSECA</small>
+                                    <small className="text-muted" style={{ marginLeft: "104px" }}>DESIGNED AND DEVELOPED BY MARIA JOSE FONSECA</small>
                                     <button
                                         type="button"
-                                        className="btn btn-dark" style={{ marginLeft: "80px", color: "#f0e68c" }}
+                                        className="btn btn-dark"
+                                        style={{ marginLeft: "80px", color: "#f0e68c" }}
                                         onClick={() => actions.Favorite({
-                                            name: vehicleDetails.properties.name,
+                                            name: properties.name,
                                             id: id,
-                                            type: "person"
+                                            type: "vehicle"
                                         })}
                                     >
                                         <i className="fas fa-heart"></i>
@@ -86,8 +99,7 @@ export const DetallesVehicles = () => {
                 </div>
             ) : (
                 <p className="text-white">Cargando detalles...</p>
-            )
-            }
-        </div >
+            )}
+        </div>
     );
 };

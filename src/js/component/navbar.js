@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../../img/logo.jpg';
+import gifStarWars from '../../img/gifStarWars.gif';
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
@@ -15,12 +16,18 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg mb-3" style={{ backgroundColor: '#000000' }}>
 			<div className="container">
-				{/* Logo centrado */}
+				<img
+					src={gifStarWars}
+					alt="gif"
+					style={{ width: '120px', height: '130px', marginTop: "10px" }}
+					className="navbar-brand mb-0 h1"
+				/>
+
 				<Link to="/" className="position-absolute top-50 start-50 translate-middle">
 					<img
 						src={logo}
 						alt="Logo"
-						style={{ width: '200px', height: '200px', marginTop: "60px" }}
+						style={{ width: '200px', height: '200px', marginTop: "10px" }}
 						className="navbar-brand mb-0 h1"
 					/>
 				</Link>
@@ -28,7 +35,7 @@ export const Navbar = () => {
 				<div className="ms-auto">
 					<div className="dropdown">
 						<button
-							className="btn bg-warning dropdown-toggle" style={{ marginTop: "20px", marginRight: "30px" }}
+							className="btn bg-warning dropdown-toggle" style={{ marginTop: "10px", marginRight: "30px" }}
 							type="button"
 							id="dropdownMenuButton"
 							onClick={toggleDropdown}  // Solo cambiar el estado para abrir/cerrar el dropdown

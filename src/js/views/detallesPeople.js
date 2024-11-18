@@ -80,7 +80,7 @@ export const DetallesPeople = () => {
                     </div>
                 </div>
             ) : (
-                <p className="text-white">Cargando detalles...</p>
+                <p className="text-white">Loading details......</p>
             )}
         </div>
     );

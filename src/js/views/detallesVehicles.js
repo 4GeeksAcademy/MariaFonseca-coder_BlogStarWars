@@ -16,7 +16,11 @@ export const DetallesVehicles = () => {
         <div className="container d-flex justify-content-center mt-5">
             {vehicleDetails ? (
                 <div className="card mb-3" style={{
-                    maxWidth: "1200px", width: "100%", backgroundColor: "#000000", borderColor: "black", borderStyle: "solid"
+                    maxWidth: "1200px",
+                    width: "100%",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)", // Fondo semi-transparente
+                    borderColor: "black",
+                    borderStyle: "solid"
                 }}>
                     <div className="row g-0">
                         <div className="col-md-6 d-flex align-items-center justify-content-center">

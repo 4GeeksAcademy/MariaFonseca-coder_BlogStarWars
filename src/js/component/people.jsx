@@ -13,7 +13,7 @@ export const People = () => {
     return (
         <div>
             <h3 className="text-white" style={{ textAlign: "left", marginLeft: "28px" }}>Characters</h3>
-            <div className="card-container" style={{ overflowX: "auto", whiteSpace: "nowrap" }}>
+            <div className="card-container">
                 {store.people && store.people.length > 0 ? (
                     store.people.map((person, index) => (
                         <div key={index} className="card mx-2" style={{ display: "inline-block", width: "290px", height: "500px" }}>

@@ -16,7 +16,6 @@ export const DetallesVehicles = () => {
         actions.VehiclesDetailsFetch(id);
     }, [id]);
 
-    // Asegúrate de que `vehicleDetails` esté bien definido antes de acceder a sus propiedades
     const vehicleDetails = store.vehicleDetails;
     const properties = vehicleDetails?.properties;
 

@@ -18,7 +18,7 @@ export const DetallesPeople = () => {
                 <div className="card mb-3" style={{
                     maxWidth: "1200px",
                     width: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.8)", // Fondo semi-transparente
+                    backgroundColor: "rgba(0, 0, 0, 0.8)", //Fondo semi-transparente
                     borderColor: "black",
                     borderStyle: "solid"
                 }}>

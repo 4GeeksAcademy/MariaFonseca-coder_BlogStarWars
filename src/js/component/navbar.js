@@ -6,9 +6,8 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-	const [isOpen, setIsOpen] = useState(false);  // Estado para controlar si el dropdown está abierto
+	const [isOpen, setIsOpen] = useState(false);
 
-	// Función para alternar la visibilidad del dropdown
 	const toggleDropdown = () => {
 		setIsOpen(!isOpen);
 	};
@@ -44,12 +43,12 @@ export const Navbar = () => {
 							className="btn bg-warning dropdown-toggle" style={{ marginTop: "10px", marginRight: "30px" }}
 							type="button"
 							id="dropdownMenuButton"
-							onClick={toggleDropdown}  // Solo cambiar el estado para abrir/cerrar el dropdown
+							onClick={toggleDropdown}
 						>
 							Favorites
 						</button>
 						<ul
-							className={`dropdown-menu dropdown-menu-end bg-dark text-white ${isOpen ? "show" : ""}`}  // Mostrar solo si `isOpen` es true
+							className={`dropdown-menu dropdown-menu-end bg-dark text-white ${isOpen ? "show" : ""}`}
 							aria-labelledby="dropdownMenuButton"
 						>
 							{store.favorites.length > 0 ? (
@@ -58,7 +57,7 @@ export const Navbar = () => {
 										<span>{fav.name}</span>
 										<button
 											className="btn btn-sm btn-danger ms-2"
-											onClick={() => actions.Favorite(fav)}  // Eliminar favorito
+											onClick={() => actions.Favorite(fav)} 
 										>
 											<i className="fas fa-trash"></i>
 										</button>
